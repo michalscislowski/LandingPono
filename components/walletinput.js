@@ -8,10 +8,10 @@ const useStyles = makeStyles({
     width: '700px', 
     fontWeight: '900', 
     '& .Mui-focused' : {
-      color: "#020202"
+      color: "#ef672dff"
     },
     '& .MuiInput-underline:after': {
-      borderBottomColor: '#020202',
+      borderBottomColor: '#ef672dff',
     },
     ['@media (max-width:749px)']: {
       width: '80%',
@@ -40,7 +40,7 @@ export default function Walletinput() {
     label="wpisz swój adres portfela" 
     className={classes.inputStyle} 
     inputProps={{style: {fontWeight: '700'}}} 
-    InputLabelProps={{style: {fontWeight: '900'}}} 
+    InputLabelProps={{style: {fontWeight: '900', color: '#ef672dff'}}} 
     value={values.name}
     onChange={handleChange("name")}
     helperText={error ? "Proszę wstawić poprawny adres portfela" : null}

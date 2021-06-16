@@ -6,19 +6,21 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Emailinput from './emailinput'
 import Walletinput from './walletinput';
-
+import Sendbutton from './sendbutton';
 
 export default function Main() {
     return (
       <div className="main">
-              <div className="logo">
-                <div>PONDEMIA</div>
-              </div>
-                <iframe width="420" height="315 autoplay=1"
-                    src="https://www.youtube.com/watch?v=OBqCR41cDL0">
+              <fieldset className="logo">
+                <div className="text">PONDEMIA</div>
+                <legend>S Y N A L K A P O N O</legend>
+              </fieldset>
+                <iframe width="640" height="320 "
+                    src="https://www.youtube.com/embed/OBqCR41cDL0?autoplay=1&loop=1">
                 </iframe> 
               <Emailinput />
               <Walletinput />
+              <Sendbutton />
               <div className="bottom">
                 <div className="socials">
                     <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/BanachGroup')} /></a>
@@ -38,12 +40,29 @@ export default function Main() {
       justify-content: space-evenly;
       align-items: center; 
       width: 100vw;
-      background-image: radial-gradient(rgba(61, 107, 212, 1), rgba(22, 24, 45, 1));
+      background-color: rgba(22, 24, 45, 1);
     }
     .logo {
-        font-size: 5rem;
-        font-weight: 900;
-        color: #ef672dff;
+      position: relative;
+      box-sizing: border-box;
+      color: #ef672dff;
+      border: 2px solid #ef672dff;
+    }
+    .text {
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-bottom: 10px;
+      font-size: 5rem;
+      font-weight: 900;
+    }
+    legend {
+      position: absolute;
+      bottom: 0;
+      font-size: 1.5rem;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      padding: 0 5px;
+      background: rgba(22, 24, 45, 1);
     }
     .small {
       font-size: 1rem;

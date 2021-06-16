@@ -4,19 +4,23 @@ import TextField from '@material-ui/core/TextField';
 
 
 const useStyles = makeStyles({
+  label: {
+    color: '#ef672dff'
+  },
   inputStyle: {
     width: '700px', 
     fontWeight: '900', 
     '& .Mui-focused' : {
-      color: "#020202"
+      color: "#ef672dff"
     },
     '& .MuiInput-underline:after': {
-      borderBottomColor: '#020202',
+      borderBottomColor: '#ef672dff',
     },
     ['@media (max-width:749px)']: {
       width: '80%',
   },
   },
+  
 });
 
 export default function Emailinput() {
@@ -41,7 +45,7 @@ export default function Emailinput() {
     label="wpisz swojego maila" 
     className={classes.inputStyle} 
     inputProps={{style: {fontWeight: '700'}}} 
-    InputLabelProps={{style: {fontWeight: '900'}}} 
+    InputLabelProps={{style: {fontWeight: '900', color: '#ef672dff'}}}
     value={values.name}
     onChange={handleChange("name")}
     helperText={error ? "Proszę wstawić poprawnego maila" : null}
