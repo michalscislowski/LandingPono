@@ -7,9 +7,8 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles({
   inputStyle: {
     color: '#0b7a75',
-    padding: 5,
-    paddingLeft: 0,
-    width: '700px', 
+    paddingBottom: 5,
+    width: '640px', 
     marginBottom: 10,
     '& .Mui-focused' : {
       color: "#ef672dff"
@@ -17,7 +16,7 @@ const useStyles = makeStyles({
     '& .MuiInput-underline:after': {
       borderBottomColor: '#183f47',
     },
-    ['@media (max-width:840px)']: {
+    ['@media (max-width:800px)']: {
       width: '80vw',
     },
     ['@media (max-width:499px)']: {
@@ -28,7 +27,6 @@ const useStyles = makeStyles({
     fontWeight: '900',
     borderColor: '#ef672dff',
     marginTop: 15,
-    marginBottom: 10,
     ['@media (max-width:499px)']: {
       marginTop: 20,
     },
