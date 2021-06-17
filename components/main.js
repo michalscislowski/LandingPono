@@ -10,30 +10,29 @@ import MyForm from './form'
 export default function Main() {
     return (
       <div className="main">
-              <fieldset className="logo">
-                <div className="text">PONDEMIA</div>
-                <legend>S Y N A L K A P O N O</legend>
-              </fieldset>
+              <div className="logo">
+                <img src="./pondemialogo.png" />
+              </div>
               <div className="middle">
-                <div className="bsmall">Banach Group</div>
-                <div className="bsocials">
-                      <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/BanachGroup')} /></a>
-                      <a className="linkedin"><LinkedInIcon aria-label="linkedin.com" onClick={() => window.open('https://www.linkedin.com/company/banach-group/')} /></a>
-                      <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/BanachGroup/')}/></a>
-                      <a className="twitter"><TwitterIcon aria-label="Twitter.com" onClick={() => window.open('https://twitter.com/BanachGroup')}/></a>
-                      <a className="youtube"><YouTubeIcon aria-label="Youtube.com" onClick={() => window.open('https://www.youtube.com/channel/UCegE3WW7U2-Wb__mWK3oKJA')}/></a>
-                      <a className="twetch" aria-label="Twetch.com" onClick={() => window.open('https://twetch.app/u/40566')}></a>
-                </div>
-                <iframe width="640" height="320 "
-                      src="https://www.youtube.com/embed/OBqCR41cDL0?autoplay=1&loop=1">
-                </iframe> 
+                <div className="psmall">E S A P Ǝ</div>
                 <div className="psocials">
                       <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/esapestore')} /></a>
                       <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/esape.pl/')}/></a>
                       <a className="youtube"><YouTubeIcon aria-label="Youtube.com" onClick={() => window.open('https://www.youtube.com/channel/UCS5Z2X09GVTAlYx0b7RhKsg')}/></a>
                       <a className="website"><PublicIcon aria-label="Youtube.com" onClick={() => window.open('https://www.esape.pl/')}/></a>
                 </div>
-                <div className="psmall">E S A P Ǝ</div>
+                <iframe width="640" height="320 "
+                      src="https://www.youtube.com/embed/OBqCR41cDL0?autoplay=1&loop=1">
+                </iframe> 
+                <div className="bsocials">
+                      <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/BanachGroup')} /></a>
+                      <a className="linkedin"><LinkedInIcon aria-label="linkedin.com" onClick={() => window.open('https://www.linkedin.com/company/banach-group/')} /></a>
+                      <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/BanachGroup/')}/></a>
+                      <a className="twitter"><TwitterIcon aria-label="Twitter.com" onClick={() => window.open('https://twitter.com/BanachGroup')}/></a>
+                      <a className="youtube"><YouTubeIcon aria-label="Youtube.com" onClick={() => window.open('https://www.youtube.com/channel/UCegE3WW7U2-Wb__mWK3oKJA')}/></a>
+                </div>
+                <div className="bsmall">Banach Group</div>
+                
               </div>
               <MyForm />
               <div className="bottom">
@@ -50,15 +49,13 @@ export default function Main() {
       background-image: radial-gradient(rgba(45, 48, 71, 1), rgba(22, 24, 45, 1));    
     }
     .logo {
-      margin: 20px;
+      top: 0;
       position: relative;
       box-sizing: border-box;
-      color: #ef672dff;
-      border: 2px solid #ef672dff;
     }
-    .youtube-pondemia {
-      width: 640px;
-      height: 320px;
+    img {
+      height: 24vh;
+      width: 60vw;
     }
     .text {
       margin: 5px 30px;
@@ -74,99 +71,60 @@ export default function Main() {
       padding: 0 5px;
       background-image: linear-gradient(180deg, rgba(35, 38, 60, 1), rgba(37, 39, 62, 1));
     }
-    .bsmall {
+    .bsmall, .psmall {
       font-size: 1.5rem;
       color: white;
       font-weight: 600;
       writing-mode: vertical-rl;
-      text-orientation: upright;
-      padding: 13px;
+      text-orientation: upright; 
     }
     .psmall {
-      font-size: 1.5rem;
-      color: white;
-      font-weight: 600;
-      padding: 60px 0 0 40px;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
+      padding-top: 45px;
+    }
+    .bsmall {
+      padding-top: 10px;
     }
     .middle {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      padding-right: 10px;
-
+    }
+    .bsocials, .psocials {
+      display: flex;
+      flex-direction: column;
+      color: #ef672dff;
     }
     .bsocials {
-      display: flex;
-      flex-direction: column;
-      color: #ef672dff;
-      padding:5px;
-    }
-    .bsocials a {
-      transition: 0.3s;
-      margin: 12px 40px;
+      margin-right: 20px;
     }
     .psocials {
-      display: flex;
-      flex-direction: column;
-      color: #ef672dff;
-      padding: 0 0 0 5px;
+      margin-left: 20px;
+    }
+    .bsocials a, .psocials a {
+      transition: 0.3s;
+
+    }
+    .bsocials a {
+      padding-top: 30px;
+      margin-left: 20px;
     }
     .psocials a {
-      margin: 45px 0 0 40px;
-      transition: 0.3s;
+      padding-top: 40px;
+      margin-right: 20px;
     }
     a:hover {
       cursor: pointer;
       transform: scale(1.15);
       color: #fd7f3c;
     }
-    .twetch {
-      margin-top: 2px;
-      width: 20px;
-      height: 20px;
-      background: url('/twetchlogoorange.png');
-      background-size: 20px 20px;
-    }
     @media only screen and (max-width: 999px) {
-      .youtube-pondemia {
+      img {
+        height: 15vh;
         width: 90vw;
-        height: 45vw;
-      }
-      .text {
-        font-size: 3.5rem;
-      }
-      legend {
-        font-size: 1rem;
       }
       .middle {
         flex-direction: column;
         writing-mode: horizontal-tb;
-        padding-right: 0;
-        align-items: center;
-      }
-      .psmall, .bsmall {
-        padding: 0;
-        text-orientation: mixed;
-        writing-mode: horizontal-tb;
-      }
-      .psocials, .bsocials {
-        flex-direction: row;
-        padding: 0 0 0 20px;
-      }
-      .psocials a, .bsocials a{
-        margin: 15px 30px 10px 0;
-      }
-    }
-    @media only screen and (max-width: 499px) {
-      .text {
-        font-size: 2.5rem;
-      }
-      .middle {
-        flex-direction: column;
-        writing-mode: horizontal-tb;
-        padding-right: 0;
         align-items: center;
       }
       legend {
@@ -176,17 +134,78 @@ export default function Main() {
         width: 90vw;
       }
       .psmall, .bsmall{
-        padding: 0;
         text-orientation: mixed;
         writing-mode: horizontal-tb;
       }
-
+      .bsmall {
+        padding-bottom: 5px;
+      }
+      .psmall {
+        padding-bottom: 5px;
+      }
       .psocials, .bsocials{
         flex-direction: row;
-        padding: 0 0 0 20px;
+      }
+      .bsocials {
+        padding-left: 50px
+      }
+      .psocials {
+        padding-left: 10px
       }
       .psocials a, .bsocials a{
-        margin: 15px 30px 10px 0;
+        margin: 0 30px 10px 0;
+      }
+      .psocials a {
+        padding-top: 5px;
+      }
+      .bsocials a{
+        padding-top: 15px;
+      }
+    }
+    @media only screen and (max-width: 499px) {
+      img {
+        padding-top: 10px;
+        height: 15vh;
+        width: 90vw;
+      }
+      .middle {
+        flex-direction: column;
+        writing-mode: horizontal-tb;
+        align-items: center;
+      }
+      legend {
+        font-size: 0.75rem;
+      }
+      iframe {
+        width: 90vw;
+      }
+      .psmall, .bsmall{
+        text-orientation: mixed;
+        writing-mode: horizontal-tb;
+      }
+      .bsmall {
+        padding-bottom: 5px;
+      }
+      .psmall {
+        padding-bottom: 5px;
+      }
+      .psocials, .bsocials{
+        flex-direction: row;
+      }
+      .bsocials {
+        padding-left: 50px
+      }
+      .psocials {
+        padding-left: 10px
+      }
+      .psocials a, .bsocials a{
+        margin: 0 30px 10px 0;
+      }
+      .psocials a {
+        padding-top: 5px;
+      }
+      .bsocials a{
+        padding-top: 15px;
       }
     }
   `}</style>
