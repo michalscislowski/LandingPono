@@ -4,6 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import PublicIcon from '@material-ui/icons/Public';
 import MyForm from './form'
 
 export default function Main() {
@@ -13,22 +14,30 @@ export default function Main() {
                 <div className="text">PONDEMIA</div>
                 <legend>S Y N A L K A P O N O</legend>
               </fieldset>
-              <div className="container">
-                <iframe className="youtube-pondemia"
-                    src="https://www.youtube.com/embed/OBqCR41cDL0?autoplay=1&loop=1">
+              <div className="middle">
+                <div className="bsmall">Banach Group</div>
+                <div className="bsocials">
+                      <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/BanachGroup')} /></a>
+                      <a className="linkedin"><LinkedInIcon aria-label="linkedin.com" onClick={() => window.open('https://www.linkedin.com/company/banach-group/')} /></a>
+                      <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/BanachGroup/')}/></a>
+                      <a className="twitter"><TwitterIcon aria-label="Twitter.com" onClick={() => window.open('https://twitter.com/BanachGroup')}/></a>
+                      <a className="youtube"><YouTubeIcon aria-label="Youtube.com" onClick={() => window.open('https://www.youtube.com/channel/UCegE3WW7U2-Wb__mWK3oKJA')}/></a>
+                      <a className="twetch" aria-label="Twetch.com" onClick={() => window.open('https://twetch.app/u/40566')}></a>
+                </div>
+                <iframe width="640" height="320 "
+                      src="https://www.youtube.com/embed/OBqCR41cDL0?autoplay=1&loop=1">
                 </iframe> 
+                <div className="psocials">
+                      <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/esapestore')} /></a>
+                      <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/esape.pl/')}/></a>
+                      <a className="youtube"><YouTubeIcon aria-label="Youtube.com" onClick={() => window.open('https://www.youtube.com/channel/UCS5Z2X09GVTAlYx0b7RhKsg')}/></a>
+                      <a className="website"><PublicIcon aria-label="Youtube.com" onClick={() => window.open('https://www.esape.pl/')}/></a>
+                </div>
+                <div className="psmall">E S A P Ǝ</div>
               </div>
               <MyForm />
               <div className="bottom">
-                <div className="socials">
-                    <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/BanachGroup')} /></a>
-                    <a className="linkedin"><LinkedInIcon aria-label="linkedin.com" onClick={() => window.open('https://www.linkedin.com/company/banach-group/')} /></a>
-                    <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/BanachGroup/')}/></a>
-                    <a className="twitter"><TwitterIcon aria-label="Twitter.com" onClick={() => window.open('https://twitter.com/BanachGroup')}/></a>
-                    <a className="twetch" aria-label="Twetch.com" onClick={() => window.open('https://twetch.app/u/40566')}></a>
-                    <a className="youtube"><YouTubeIcon aria-label="Youtube.com" onClick={() => window.open('https://www.youtube.com/channel/UCegE3WW7U2-Wb__mWK3oKJA')}/></a>
-                </div>
-                <div className="small">by BanachGroup</div>
+                
               </div>
         <style jsx>{`
     .main {
@@ -63,26 +72,49 @@ export default function Main() {
       left: 50%;
       transform: translate(-50%, 50%);
       padding: 0 5px;
-      background: rgba(22, 24, 45, 1);
+      background-image: linear-gradient(180deg, rgba(35, 38, 60, 1), rgba(37, 39, 62, 1));
     }
-    .small {
-      font-size: 1rem;
-      color: #ef672dff;
-      width: 100%;
-      text-align: center;
-      padding: 5px;
-      font-weight: 500;
+    .bsmall {
+      font-size: 1.5rem;
+      color: white;
+      font-weight: 600;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      padding: 13px;
     }
-    .socials {
+    .psmall {
+      font-size: 1.5rem;
+      color: white;
+      font-weight: 600;
+      padding: 60px 0 0 40px;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+    .middle {
       display: flex;
+      flex-direction: row;
       justify-content: center;
-      padding-right: 15px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #0b7a75;
-      color: #ef672dff;
+      padding-right: 10px;
+
     }
-    .socials a {
-      margin-left: 15px;
+    .bsocials {
+      display: flex;
+      flex-direction: column;
+      color: #ef672dff;
+      padding:5px;
+    }
+    .bsocials a {
+      transition: 0.3s;
+      margin: 12px 40px;
+    }
+    .psocials {
+      display: flex;
+      flex-direction: column;
+      color: #ef672dff;
+      padding: 0 0 0 5px;
+    }
+    .psocials a {
+      margin: 45px 0 0 40px;
       transition: 0.3s;
     }
     a:hover {
