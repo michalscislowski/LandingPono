@@ -67,6 +67,10 @@ export default function Emailinput() {
     const regexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regexp.test(s);
   }
+  function isWallet(s) {
+    const regexp = /^[a-zA-Z0-9]*$/;
+    return regexp.test(s);
+  }
 
   const handleDataBaseSet = () => {
     console.log("email:", valuesEmail.name);
@@ -74,7 +78,7 @@ export default function Emailinput() {
   };
 
   const error = isEmail(valuesEmail.name) !== true && valuesEmail.name.length !== 0;
-  const errorWallet = false;
+  const errorWallet = isWallet(valuesWallet.name) !== true && valuesWallet.name.length !== 0;;
 
   return (
     <div className="form-input">
