@@ -146,29 +146,17 @@ export default function Main() {
         padding-right: 0;
         align-items: center;
       }
-      .psmall {
-        padding: 0 0 0 0;
+      .psmall, .bsmall {
+        padding: 0;
         text-orientation: mixed;
         writing-mode: horizontal-tb;
       }
-      .bsmall {
-        padding: 0 0 0 0;
-        text-orientation: mixed;
-        writing-mode: horizontal-tb;
-      }
-      .psocials {
+      .psocials, .bsocials {
         flex-direction: row;
         padding: 0 0 0 20px;
       }
-      .bsocials {
-        flex-direction: row;
-        padding: 0 0 0 20px;
-      }
-      .psocials a {
+      .psocials a, .bsocials a{
         margin: 15px 30px 10px 0;
-      }
-      .bsocials a {
-        margin: 10px 20px 10px 0;
       }
     }
     @media only screen and (max-width: 499px) {
@@ -185,31 +173,20 @@ export default function Main() {
         font-size: 0.75rem;
       }
       iframe {
-        width: 100vw;
+        width: 90vw;
       }
-      .psmall {
-        padding: 0 0 0 0;
+      .psmall, .bsmall{
+        padding: 0;
         text-orientation: mixed;
         writing-mode: horizontal-tb;
       }
-      .bsmall {
-        padding: 0 0 0 0;
-        text-orientation: mixed;
-        writing-mode: horizontal-tb;
-      }
-      .psocials {
+
+      .psocials, .bsocials{
         flex-direction: row;
         padding: 0 0 0 20px;
       }
-      .bsocials {
-        flex-direction: row;
-        padding: 0 0 0 20px;
-      }
-      .psocials a {
+      .psocials a, .bsocials a{
         margin: 15px 30px 10px 0;
-      }
-      .bsocials a {
-        margin: 10px 20px 10px 0;
       }
     }
   `}</style>
