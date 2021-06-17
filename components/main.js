@@ -129,7 +129,7 @@ export default function Main() {
       background: url('/twetchlogoorange.png');
       background-size: 20px 20px;
     }
-    @media only screen and (max-width: 699px) {
+    @media only screen and (max-width: 999px) {
       .youtube-pondemia {
         width: 90vw;
         height: 45vw;
@@ -140,13 +140,76 @@ export default function Main() {
       legend {
         font-size: 1rem;
       }
+      .middle {
+        flex-direction: column;
+        writing-mode: horizontal-tb;
+        padding-right: 0;
+        align-items: center;
+      }
+      .psmall {
+        padding: 0 0 0 0;
+        text-orientation: mixed;
+        writing-mode: horizontal-tb;
+      }
+      .bsmall {
+        padding: 0 0 0 0;
+        text-orientation: mixed;
+        writing-mode: horizontal-tb;
+      }
+      .psocials {
+        flex-direction: row;
+        padding: 0 0 0 20px;
+      }
+      .bsocials {
+        flex-direction: row;
+        padding: 0 0 0 20px;
+      }
+      .psocials a {
+        margin: 15px 30px 10px 0;
+      }
+      .bsocials a {
+        margin: 10px 20px 10px 0;
+      }
     }
     @media only screen and (max-width: 499px) {
       .text {
         font-size: 2.5rem;
       }
+      .middle {
+        flex-direction: column;
+        writing-mode: horizontal-tb;
+        padding-right: 0;
+        align-items: center;
+      }
       legend {
         font-size: 0.75rem;
+      }
+      iframe {
+        width: 100vw;
+      }
+      .psmall {
+        padding: 0 0 0 0;
+        text-orientation: mixed;
+        writing-mode: horizontal-tb;
+      }
+      .bsmall {
+        padding: 0 0 0 0;
+        text-orientation: mixed;
+        writing-mode: horizontal-tb;
+      }
+      .psocials {
+        flex-direction: row;
+        padding: 0 0 0 20px;
+      }
+      .bsocials {
+        flex-direction: row;
+        padding: 0 0 0 20px;
+      }
+      .psocials a {
+        margin: 15px 30px 10px 0;
+      }
+      .bsocials a {
+        margin: 10px 20px 10px 0;
       }
     }
   `}</style>
