@@ -27,6 +27,7 @@ const useStyles = makeStyles({
     fontWeight: '900',
     borderColor: '#ef672dff',
     marginTop: 15,
+    marginBottom: 10,
     ['@media (max-width:499px)']: {
       marginTop: 20,
     },
