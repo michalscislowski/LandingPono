@@ -5,18 +5,10 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MyForm from './form'
 import PublicIcon from '@material-ui/icons/Public';
-import { makeStyles } from "@material-ui/core/styles";
 import MobileSocials from './mobileSocials';
 
 
-const useStyles = makeStyles({
-  slider: {
-    background: '#16182d', 
-  }
-});
-
 export default function Main() {
-  const classes = useStyles();
     return (
       <div className="main">
               <div className="logo">
@@ -33,7 +25,7 @@ export default function Main() {
                     </div>
                 </div>
 
-                <div className="container">
+                <div className="youtube-embeded">
                   <iframe className="youtube-pondemia"
                       src="https://www.youtube.com/embed/OBqCR41cDL0?autoplay=0&loop=1">
                   </iframe> 
@@ -69,6 +61,9 @@ export default function Main() {
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
+    }
+    .youtube-embeded {
+      margin-bottom: 5px;
     }
     .esape, .banach {
       margin: 50px;

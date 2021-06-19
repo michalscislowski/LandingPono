@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 
 const userSchema = new Schema({
     email: String,
-    wallet: String,
+    wallet_addres: String,
     status: String,
     date: { type: Date, default: Date.now }
 });

@@ -4,14 +4,14 @@ const User  = require("../../models/userModel");
 export default async (req, res) => {
     console.log(JSON.stringify(req.body))
     const { db } = await connectToDatabase();
-    const users = db.collection("token-reveivers");
+    const users = db.collection("token-receivers");
     const email = req.body.email;
-    const wallet = req.body.wallet;
+    const wallet_addres = req.body.wallet_addres;
     const status = req.body.status;
     const date = req.body.date;
     let newUser = new User({
         email,
-        wallet,
+        wallet_addres,
         status,
         date
     });
