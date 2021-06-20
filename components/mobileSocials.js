@@ -9,7 +9,7 @@ export default function MobileSocials() {
         <div className="container">
             <div className="wrapper">
                 <div className="esape-mobile">
-                    <div className="psmall">E S A P Ǝ</div>
+                    <img className="esape-logo" src="./esape-logo.png"></img>
                     <div className="psocials">
                         <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/esapestore')} /></a>
                         <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/esape.pl/')}/></a>
@@ -18,7 +18,7 @@ export default function MobileSocials() {
                     </div>
                 </div>
                 <div className="banach-mobile">
-                    <div className="psmall-banach">BANACH</div>
+                    <img className="banach-logo" src="./banach-logo.png"></img>
                     <div className="socials">
                         <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/BanachGroup')} /></a>
                         <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/BanachGroup/')}/></a>
@@ -34,27 +34,20 @@ export default function MobileSocials() {
                     flex-direction: row;
                     justify-content: center;
                 }
-                .psmall, .psmall-banach {
-                    text-align: center;
-                    font-size: 2rem;
-                    color: white;
-                    font-weight: 600;
+                .banach-logo {
+                    margin-left: 5px;
+                    margin-bottom: 7.5px;
+                    width: 155px;
+                    height: 22px;
                     cursor: pointer;
-                    margin-bottom: 20px;
-                    margin-top: 20px;
-                }
-                .psmall-banach {
-                    letter-spacing: 3px;
-                }
-                .small{
-                    font-size: 1rem;
-                    color: #ef672dff;
-                    width: 100%;
-                    text-align: center;
-                    padding: 5px;
-                    font-weight: 400;
-                    color: white;
-                }
+                  }
+                .esape-logo {
+                    margin-left: 10px;
+                    margin-bottom: -5px;
+                    width: 150px;
+                    height: 50px;
+                    cursor: pointer;
+                  }
                 .socials, .psocials {
                     display: flex;
                     justify-content: center;
@@ -87,6 +80,9 @@ export default function MobileSocials() {
                 @media only screen and (max-width: 1100px) {
                     .esape-mobile {
                         margin-right: 30px;
+                    }
+                    .banach-mobile {
+                        margin-top: 15.5px;
                     }
                 }
                 @media only screen and (max-width: 499px) {

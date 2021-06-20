@@ -16,7 +16,7 @@ export default function Main() {
               </div>
               <div className="wrapper">
                 <div className="esape">
-                  <div className="psmall">E S A P Ǝ</div>
+                    <img className="esape-logo" src="./esape-logo.png"></img>
                     <div className="psocials">
                       <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/esapestore')} /></a>
                       <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/esape.pl/')}/></a>
@@ -32,7 +32,7 @@ export default function Main() {
                 </div>
 
                 <div className="banach">
-                  <div className="psmall-banach">BANACH</div>
+                  <img className="banach-logo" src="./banach-logo.png"></img>
                   <div className="socials">
                       <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/BanachGroup')} /></a>
                       <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/BanachGroup/')}/></a>
@@ -56,6 +56,20 @@ export default function Main() {
       width: 100vw;
       background-image: radial-gradient(rgba(45, 48, 71, 1), rgba(22, 24, 45, 1));    
     }
+    .banach-logo {
+      margin-left: 5px;
+      margin-bottom: 7.5px;
+      width: 155px;
+      height: 22px;
+      cursor: pointer;
+    }
+    .esape-logo {
+      margin-left: 15px;
+      margin-bottom: -5px;
+      width: 140px;
+      height: 50px;
+      cursor: pointer;
+    }
     .wrapper {
       display: flex;
       flex-direction: row;
@@ -74,7 +88,7 @@ export default function Main() {
     .logo {
       position: relative;
       box-sizing: border-box;
-      max-width: 900px;
+      max-width: 700px;
       margin-top: 20px;
       margin-bottom: 20px;
     }
