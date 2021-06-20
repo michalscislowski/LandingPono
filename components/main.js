@@ -54,7 +54,7 @@ export default function Main() {
       justify-content: space-evenly;
       align-items: center; 
       width: 100vw;
-      background-image: radial-gradient(rgba(45, 48, 71, 1), rgba(22, 24, 45, 1));    
+      background: #111;   
     }
     .banach-logo {
       margin-left: 5px;
