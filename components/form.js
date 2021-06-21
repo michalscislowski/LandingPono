@@ -6,8 +6,10 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import 'react-notifications-component/dist/theme.css'
+import 'animate.css/animate.min.css';
 import axios from 'axios'
+import { store } from 'react-notifications-component';
 const url_create = process.env.NEXT_PUBLIC_HOST_URL + "/api/addReceiver";
 
 const useStyles = makeStyles({
@@ -54,7 +56,7 @@ const useStyles = makeStyles({
     color: '#ef672d',
   },
   dialogTitle: {
-    background:'#16182d',
+    background: '#111', 
     color: '#ef672d',
   }
 });
@@ -68,10 +70,6 @@ export default function Emailinput() {
   const [valuesWallet, setValuesWallet] = useState({
     name: ""
   });
- 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
 
   const handleClose = () => {
     setOpen(false);
@@ -93,15 +91,48 @@ export default function Emailinput() {
     const regexp = /^[a-zA-Z0-9]*$/;
     return regexp.test(s);
   }
-  const handleInputToDataBase = () => {
-    setOpen(true);
+  const handleTokenButton = () => {
+    emptyInputError ? addWarningNotofication() : null;
+    if (!emailError && !walletError && valuesEmail.name.length !== 0 && valuesWallet.name.length !== 0) {
+      setOpen(true);
+      console.log(emptyInputError);
+    }
+  }
+
+  function addSuccessNotification() {
+    store.addNotification({
+      title: "Sukces!",
+      message: "Twoje zgoszenie zostało przyjęte!",
+      type: "success",
+      insert: "top",
+      container: "top-right",
+      animationIn: ["animate__animated", "animate__fadeIn"],
+      animationOut: ["animate__animated", "animate__fadeOut"],
+      dismiss: {
+        duration: 4000,
+        showIcon: true,
+      }
+    });
+  }
+
+  function addWarningNotofication() {
+    store.addNotification({
+      title: "Uwaga!",
+      message: "Oba pola muszą być wypełnione!",
+      type: "warning",
+      insert: "top",
+      container: "top-right",
+      animationIn: ["animate__animated", "animate__fadeIn"],
+      animationOut: ["animate__animated", "animate__fadeOut"],
+      dismiss: {
+        duration: 4000,
+        showIcon: true,
+      }
+    });
   }
 
   const handleDataBaseAddition = () => {
     console.log("dodawanie do bazy");
-    console.log("email", emailError);
-    console.log("wallet", walletError);
-    setOpen(true);
     if (!emailError && !walletError && valuesEmail.name.length !== 0 && valuesWallet.name.length !== 0) {
       console.log("email:", valuesEmail.name);
       console.log("wallet:", valuesWallet.name);
@@ -126,11 +157,13 @@ export default function Emailinput() {
         name: ""
       });
       setOpen(false);
+      addSuccessNotification();
     }
   };
 
   const emailError = isEmail(valuesEmail.name) !== true && valuesEmail.name.length !== 0;
   const walletError = isWallet(valuesWallet.name) !== true && valuesWallet.name.length !== 0;
+  const emptyInputError = valuesEmail.name.length == 0 || valuesWallet.name.length == 0
 
   return (
     <div className="form-input">
@@ -144,8 +177,8 @@ export default function Emailinput() {
           style={{backgroundColor: 'transparent'}}
         >
           {/* <DialogTitle className={classes.dialogTitle} id="alert-dialog-slide-title"><span>Potwierdzenie</span></DialogTitle> */}
-          <DialogContent style={{background:'#16182d'}}>
-            <DialogContentText className={classes.potwierdzenie} id="alert-dialog-slide-description">
+          <DialogContent style={{background: '#111'}}>
+            <DialogContentText className={classes.potwierdzenie} component={'span'} id="alert-dialog-slide-description">
               Czy poniższe dane się zgadzają?
               <ul>
                 <li><span>email: </span> {valuesEmail.name}</li>
@@ -153,7 +186,7 @@ export default function Emailinput() {
               </ul>
             </DialogContentText>
           </DialogContent>
-          <DialogActions style={{background:'#16182d'}}>
+          <DialogActions style={{background: '#111'}}>
             <Button className={classes.buttonAccept} onClick={handleClose} variant="contained" color="secondary">
               Popraw
             </Button>
@@ -191,7 +224,8 @@ export default function Emailinput() {
         helperText={walletError ? "niepoprawny adres portfela" : null}
         error={walletError}
       />
-      <Button onClick={handleInputToDataBase} className={classes.buttonStyle} variant="outlined" style={{color: '#ef672d'}}>ZDOBĄDŹ TOKEN</Button>
+      {/* <p>{emptyInputError ? "Oba pola muszą być wypełnione" : null}</p> */}
+      <Button onClick={handleTokenButton} className={classes.buttonStyle} variant="outlined" style={{color: '#ef672d'}}>ZDOBĄDŹ TOKEN</Button>
       <style jsx>{`
         .form-input {
           display: flex;
@@ -202,6 +236,35 @@ export default function Emailinput() {
           color: #bf5224;
           font-weight: 350;
         }
+        p {
+          margin-top: -5px;
+          color: #eee;
+        }
+        .notification-custom-icon {
+          flex-basis: 20%;
+          position: relative;
+          display: inline-block;
+          padding: 8px 8px 8px 12px; }
+        
+          .fa {
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            font-size: 28px;
+            position: relative;
+            transform: translate(-50%, -50%);
+          }
+  
+        
+        .notification-custom-success {
+          width: 100%;
+          display: flex;
+          background-color: #28a745;}
+        
+          .notification-custom-icon {
+            border-left: 8px solid darken(#28a745, 15%);
+          }
+        
       `}</style>
     </div>
   )}
