@@ -9,7 +9,7 @@ export default function MobileSocials() {
         <div className="container">
             <div className="wrapper">
                 <div className="esape-mobile">
-                    <img className="esape-logo" src="./esape-logo.png"></img>
+                    <img className="esape-logo" onClick={() => window.open('https://www.esape.pl/')} src="./esape-logo.png"></img>
                     <div className="psocials">
                         <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/esapestore')} /></a>
                         <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/esape.pl/')}/></a>
