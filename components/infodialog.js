@@ -8,36 +8,34 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-import AccountBalanceWalletOutlinedIcon from '@material-ui/icons/AccountBalanceWalletOutlined';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
     position: 'relative',
     backgroundColor:'#111',
-    color: '#ef672dff'
+    color: '#ef672d'
   },
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
   },
-  button: {
+  buttonLetsGo: {
     fontWeight: '900',
-    borderColor: '#ef672dff',
-    color: '#ef672dff',
-  },
-  kupBSV: {
-    margin: 10,
-    background: '#ef672dff', 
-    color: 'white', 
+    color: '#111',
+    background: '#ef672d',
+    marginTop: 20,
+    marginBottom: 20,
     fontWeight: '900',
     '&:hover' : {
-      color: 'white', 
-      background: '#ef672dff', 
-      transform: 'scale(1.02)',
-      transition: '0.25s ease-in-out'
+      background: '#ef561c', 
+      color: '#222',
     }
+  },
+  button: {
+    fontWeight: '900',
+    borderColor: '#ef672d',
+    color: '#ef672d',
   }
 }));
 
@@ -57,10 +55,6 @@ export default function InfoDialog() {
     setOpen(false);
   };
 
-  const handleBuy = (e) => {
-    e.preventDefault()
-      window.open('https://www.kupbsv.pl', '_blank')
-  }
 
   return (
     <div>
@@ -79,11 +73,10 @@ export default function InfoDialog() {
           </Toolbar>
         </AppBar>
         <div className="main">
-          <div className="info">
             <div className="box">
-              <a className="title">1. Wchodzimy na MoneyButton.com</a>
+              <a className="title">1. Wchodzimy na <a className="mb-button" onClick={() => window.open('https://www.moneybutton.com/')}>moneybutton.com</a></a>
               <img></img>
-              <p className="description">Zakładamy konto potrzebne do odebrania tokena.</p>
+              <p className="description">Zakładamy konto na platformie moneybutton potrzebne do odebrania tokena.</p>
             </div>
             <div className="box">
               <a className="title">2. Klikamy „sign up" i wypełniamy wszystkie potrzebne do rejestracji pola</a>
@@ -91,108 +84,71 @@ export default function InfoDialog() {
               <p className="description">PAMIĘTAJ o potwierdzeniu mailowym, które przyjdzie do Ciebie na koniec rejestracji.</p>
             </div>
             <div className="box">
-              <a className="title">3. Po potwierdzeniu maila: </a>
+              <a className="title">3. Logoujemy się na <a className="mb-button" onClick={() => window.open('https://www.tokenpow.com/')}>tokenpow.com</a></a>
               <img></img>
-              <p className="description">Wbijamy na Tokenpow.com, klikamy LogIn i wybieramy Money Button - chwila magii - jesteśmy w miejscu docelowym.</p>
+              <p className="description">Wbijamy na tokenpow.com, klikamy LogIn i&nbsp;wybieramy Money Button - chwila magii - jesteśmy w miejscu docelowym.</p>
             </div>
             <div className="box">
-              <a className="title">4. Na portalu Tokenpow.com:</a>
+              <a className="title">4. Na portalu tokenpow.com:</a>
               <img></img>
               <p className="description">W prawym górnym rogu ekranu kliknij na swój profil i wybierz zakładkę „my profile".</p>
             </div>
             <div className="box">
-              <a className="title">5. Na stronie wieszczemumowi<br/>sietuszyfrem.pl</a>
+              <a className="title">5. Na stronie wieszczemumowisietuszyfrem.pl</a>
               <img></img>
-              <p className="description">Skopiuj adres portfela i wklej go w odpowieniej rybruce, razem z adresem e-mail na który zakupiony został pre-order.</p>
+              <p className="description">Skopiuj adres portfela i wklej go w odpowieniej rybruce razem z adresem e-mail na który zakupiony został pre-order.</p>
             </div>
-          </div>
-          <div>
-            <Button 
-              variant="outlined" 
-              className={classes.button} 
-              startIcon={<KeyboardArrowRightIcon />} 
-              onClick={handleClose}
-            >
-              ZACZYNAJMY
-            </Button>
-          </div>
+            <div>
+              <Button 
+                variant="outlined" 
+                className={classes.buttonLetsGo} 
+                startIcon={<KeyboardArrowRightIcon />} 
+                onClick={handleClose}
+              >
+                ZACZYNAJMY
+              </Button>
+            </div>
         </div>
       </Dialog>
       <style jsx>{`
         .main {
-          height: 100vh;
-          color: #ef672dff;
+          color: #ef672d;
+          background: #111; 
           display: flex;
+          flex: 1;
           flex-direction: column;
-          justify-content: center;
+          flex-wrap: nowrap;
+          justify-content: space-around;
           align-items: center;
-          align-content: center;
-          background: #111;  
         }
-        .logo {
-          font-size: 5rem;
-          font-weight: 900;
-          margin-bottom: 10px;
-        }
-        .info {
-          font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          font-weight: 900;
-          width: 50%;
-          margin-bottom: 25px;
-          margin-top: 25px;
+        .box {
+          width: 60%;
+          max-width: 750px;
+          min-width: 400px;
+          border-bottom: 1px solid #0b7a75;
         }
         .title {
           font-size: 1.3rem;
-          font-weight: 900;
-        }
-        .kupbsv {
-          margin-top: 10px;
-        }
-        .box {
-          flex: 1 1 30%;
-          margin: 15px;
-          border: 2px solid #ef672dff;
-          border-radius: 5px;
-          padding-left: 5px;
-          padding-right: 5px;
+          font-weight: 700;
         }
         .description {
-          text-align: justify;
+          padding-bottom: 15px;
+        }
+        .mb-button {
+          cursor: pointer;
         }
         @media only screen and (max-width: 499px) {
-          .main {
-            height: 200vh;
-          }
-          .info {
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            margin-top: 1vh;
-          }
           .box {
-            margin: 10px;
-          }
-          .logo {
+            margin: auto;
+            min-width: 300px;
+            width: 90%;
             margin-top: 15px;
-            font-size: 4.25rem;
-          }
-          .kupbsv {
-            text-align: center;
           }
           .description {
-            text-align: left;
+            padding-bottom: 15px;
+            text-align: justify;
           }
-        }
-        @media only screen and (min-width: 500px) {
-          .box:last-child {
-            width: 100%;
+          .title {
             text-align: center;
           }
         }
