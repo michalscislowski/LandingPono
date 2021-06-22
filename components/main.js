@@ -86,7 +86,7 @@ export default function Main() {
       margin-bottom: 5px;
     }
     .info {
-      margin-top: 1.2vh;
+      margin-top: 15px;
     }
     .esape, .banach {
       margin: 50px;

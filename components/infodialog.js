@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -59,7 +59,7 @@ export default function InfoDialog() {
   return (
     <div>
       <Button variant="outlined"  className={classes.button} onClick={handleClickOpen} >
-        JAK UZYSKAĆ TOKEN?
+        JAK ZDOBYĆ TOKEN?
       </Button>
       <Dialog fullScreen open={open} onClose={handleClose}  TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
@@ -73,43 +73,37 @@ export default function InfoDialog() {
           </Toolbar>
         </AppBar>
         <div className="main">
-          <div className="child">
-            <div className="box">
-              <a className="title">1. Wchodzimy na <a className="mb-button" onClick={() => window.open('https://www.moneybutton.com/')}>moneybutton.com</a></a>
-              <img></img>
-              <p className="description">Zakładamy konto na platformie moneybutton potrzebne do odebrania tokena.</p>
-            </div>
-            <div className="box">
-              <a className="title">2. Klikamy „sign up" i wypełniamy wszystkie potrzebne do rejestracji pola</a>
-              <img></img>
-              <p className="description">PAMIĘTAJ o potwierdzeniu mailowym, które przyjdzie do Ciebie na koniec rejestracji.</p>
-            </div>
-            <div className="box">
-              <a className="title">3. Logoujemy się na <a className="mb-button" onClick={() => window.open('https://tokenpow.com/')}>tokenpow.com</a></a>
-              <img></img>
-              <p className="description">Wbijamy na tokenpow.com, klikamy LogIn i&nbsp;wybieramy Money Button - chwila magii - jesteśmy w miejscu docelowym.</p>
-            </div>
-            <div className="box">
-              <a className="title">4. Na portalu <a className="mb-button" onClick={() => window.open('https://tokenpow.com/')}>tokenpow.com</a>:</a>
-              <img></img>
-              <p className="description">W prawym górnym rogu ekranu kliknij na swój profil i wybierz zakładkę „my profile".</p>
-            </div>
-            <div className="box">
-              <a className="title">5. Na stronie <a className="mb-button" onClick={handleClose}>wieszczemumowisietuszyfrem.pl</a></a>
-              <img></img>
-              <p className="description">Skopiuj adres portfela i wklej go w odpowieniej rybruce razem z adresem e-mail na który zakupiony został pre-order.</p>
-            </div>
-            <div>
-              <Button 
-                variant="outlined" 
-                className={classes.buttonLetsGo} 
-                startIcon={<KeyboardArrowRightIcon />} 
-                onClick={handleClose}
-              >
-                ZACZYNAJMY
-              </Button>
-            </div>
-            </div>
+          <div className="box">
+            <a className="title">1. Założenie konta <a className="mb-button" onClick={() => window.open('https://www.moneybutton.com/')}>moneybutton</a></a>
+            <img></img>
+            <p className="description">Wchodzimy na <a className="mb-button" onClick={() => window.open('https://www.moneybutton.com/')}>moneybutton.com</a>. 
+              Klikamy „sign up" i wypełniamy wszystkie potrzebne do rejestracji pola. PAMIĘTAJ o potwierdzeniu emailowym, które przyjdzie do Ciebie na koniec rejestracji.</p>
+          </div>
+          <div className="box">
+            <a className="title">2. Logowanie na <a className="mb-button" onClick={() => window.open('https://tokenpow.com/')}>tokenpow.com</a></a>
+            <img></img>
+            <p className="description">Wbijamy na <a className="mb-button" onClick={() => window.open('https://tokenpow.com/')}>tokenpow.com</a>, klikamy Login i&nbsp;wybieramy Money Button - chwila magii i&nbsp;jesteśmy w miejscu docelowym.</p>
+          </div>
+          <div className="box">
+            <a className="title">3. Zdobycie adresu portfela <a className="mb-button" onClick={() => window.open('https://tokenpow.com/')}>tokenpow</a></a>
+            <img></img>
+            <p className="description">W prawym, górnym rogu ekranu kliknij na swój profil i wybierz zakładkę 'my profile'. Skopiuj adres portfela z pola 'Run Owner Address'.</p>
+          </div>
+          <div className="box">
+            <a className="title">4. Odebranie tokena na <a className="mb-button" onClick={handleClose}>wieszczemumowisietuszyfrem.pl</a></a>
+            <img></img>
+            <p className="description">Skopiowany adres portfela wklejamy w odpowieniej rubryce razem z adresem e-mail, na który zakupiony został pre-order i klikamy ZDOBĄDŹ TOKEN!</p>
+          </div>
+          <div>
+            <Button 
+              variant="outlined" 
+              className={classes.buttonLetsGo} 
+              startIcon={<KeyboardArrowRightIcon />} 
+              onClick={handleClose}
+            >
+              ZACZYNAJMY
+            </Button>
+          </div>
         </div>
       </Dialog>
       <style jsx>{`
@@ -122,36 +116,29 @@ export default function InfoDialog() {
           flex-wrap: nowrap;
           justify-content: space-around;
           align-items: center;
-          overflow: hidden;
-          position: relative;
-        }
-        .child {
-          display: flex;
-          flex: 1;
-          flex-direction: column;
-          align-items: center;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: -17px;
-          overflow: scroll;
         }
         .box {
           width: 60%;
           max-width: 750px;
           min-width: 400px;
+          padding-top: 15px;
           border-bottom: 1px solid #0b7a75;
         }
         .title {
-          font-size: 1.3rem;
+          font-size: 1.5rem;
           font-weight: 700;
         }
         .description {
           padding-bottom: 15px;
+          line-height: 1.75rem;
+          text-align: justify;
         }
         .mb-button {
           cursor: pointer;
+          font-weight: 700;
+        }
+        .mb-button:hover {
+          color: #ff893f;
         }
         @media only screen and (max-width: 499px) {
           .box {
@@ -159,7 +146,6 @@ export default function InfoDialog() {
             min-width: 300px;
             width: 90%;
             margin-top: 15px;
-            margin-left: 3vw;
           }
           .description {
             padding-bottom: 15px;

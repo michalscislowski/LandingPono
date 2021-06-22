@@ -1,10 +1,11 @@
 import { connectToDatabase } from "../../util/mongodb";
 const User  = require("../../models/userModel");
+const database = process.env.NEXT_PUBLIC_DATABASE;
 
 export default async (req, res) => {
     console.log(JSON.stringify(req.body))
     const { db } = await connectToDatabase();
-    const users = db.collection("token-receivers");
+    const users = db.collection(database);
     const email = req.body.email;
     const wallet_addres = req.body.wallet_addres;
     const status = req.body.status;
