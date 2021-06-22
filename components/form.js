@@ -6,6 +6,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
+import InfoDialog from './infodialog';
 import 'react-notifications-component/dist/theme.css'
 import 'animate.css/animate.min.css';
 import axios from 'axios'
@@ -225,7 +226,10 @@ export default function Emailinput() {
         error={walletError}
       />
       {/* <p>{emptyInputError ? "Oba pola muszą być wypełnione" : null}</p> */}
-      <Button onClick={handleTokenButton} className={classes.buttonStyle} variant="outlined" style={{color: '#ef672d'}}>ZDOBĄDŹ TOKEN</Button>
+        <Button onClick={handleTokenButton} className={classes.buttonStyle} variant="outlined" style={{color: '#ef672d'}}>ZDOBĄDŹ TOKEN</Button>
+        <div className="infobutton">
+          <InfoDialog />
+        </div>
       <style jsx>{`
         .form-input {
           display: flex;
@@ -261,10 +265,14 @@ export default function Emailinput() {
           display: flex;
           background-color: #28a745;}
         
-          .notification-custom-icon {
-            border-left: 8px solid darken(#28a745, 15%);
-          }
-        
+        .notification-custom-icon {
+          border-left: 8px solid darken(#28a745, 15%);
+        }
+        .infobutton {
+          position: absolute;
+          right: 25vw;
+          bottom: 0.6vh;
+        }
       `}</style>
     </div>
   )}
