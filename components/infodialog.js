@@ -61,7 +61,7 @@ export default function InfoDialog() {
       <Button variant="outlined"  className={classes.button} onClick={handleClickOpen} >
         JAK UZYSKAĆ TOKEN?
       </Button>
-      <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+      <Dialog fullScreen open={open} onClose={handleClose}  TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
@@ -73,6 +73,7 @@ export default function InfoDialog() {
           </Toolbar>
         </AppBar>
         <div className="main">
+          <div className="child">
             <div className="box">
               <a className="title">1. Wchodzimy na <a className="mb-button" onClick={() => window.open('https://www.moneybutton.com/')}>moneybutton.com</a></a>
               <img></img>
@@ -84,17 +85,17 @@ export default function InfoDialog() {
               <p className="description">PAMIĘTAJ o potwierdzeniu mailowym, które przyjdzie do Ciebie na koniec rejestracji.</p>
             </div>
             <div className="box">
-              <a className="title">3. Logoujemy się na <a className="mb-button" onClick={() => window.open('https://www.tokenpow.com/')}>tokenpow.com</a></a>
+              <a className="title">3. Logoujemy się na <a className="mb-button" onClick={() => window.open('https://tokenpow.com/')}>tokenpow.com</a></a>
               <img></img>
               <p className="description">Wbijamy na tokenpow.com, klikamy LogIn i&nbsp;wybieramy Money Button - chwila magii - jesteśmy w miejscu docelowym.</p>
             </div>
             <div className="box">
-              <a className="title">4. Na portalu tokenpow.com:</a>
+              <a className="title">4. Na portalu <a className="mb-button" onClick={() => window.open('https://tokenpow.com/')}>tokenpow.com</a>:</a>
               <img></img>
               <p className="description">W prawym górnym rogu ekranu kliknij na swój profil i wybierz zakładkę „my profile".</p>
             </div>
             <div className="box">
-              <a className="title">5. Na stronie wieszczemumowisietuszyfrem.pl</a>
+              <a className="title">5. Na stronie <a className="mb-button" onClick={handleClose}>wieszczemumowisietuszyfrem.pl</a></a>
               <img></img>
               <p className="description">Skopiuj adres portfela i wklej go w odpowieniej rybruce razem z adresem e-mail na który zakupiony został pre-order.</p>
             </div>
@@ -108,6 +109,7 @@ export default function InfoDialog() {
                 ZACZYNAJMY
               </Button>
             </div>
+            </div>
         </div>
       </Dialog>
       <style jsx>{`
@@ -120,6 +122,20 @@ export default function InfoDialog() {
           flex-wrap: nowrap;
           justify-content: space-around;
           align-items: center;
+          overflow: hidden;
+          position: relative;
+        }
+        .child {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: -17px;
+          overflow: scroll;
         }
         .box {
           width: 60%;
@@ -143,6 +159,7 @@ export default function InfoDialog() {
             min-width: 300px;
             width: 90%;
             margin-top: 15px;
+            margin-left: 3vw;
           }
           .description {
             padding-bottom: 15px;
