@@ -6,7 +6,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MyForm from './form'
 import PublicIcon from '@material-ui/icons/Public';
 import MobileSocials from './mobileSocials';
-
+import InfoDialog from './infodialog';
 
 export default function Main() {
     return (
@@ -28,7 +28,10 @@ export default function Main() {
                 <div className="youtube-embeded">
                   <iframe className="youtube-pondemia"
                       src="https://www.youtube.com/embed/OBqCR41cDL0?autoplay=1&loop=1">
-                  </iframe> 
+                  </iframe>
+                  <div className="info">
+                    <InfoDialog />
+                  </div>   
                 </div>
 
                 <div className="banach">
@@ -77,7 +80,13 @@ export default function Main() {
       align-items: center;
     }
     .youtube-embeded {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-bottom: 5px;
+    }
+    .info {
+      margin-top: 1.2vh;
     }
     .esape, .banach {
       margin: 50px;

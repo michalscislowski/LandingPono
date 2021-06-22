@@ -101,7 +101,7 @@ export default function InfoDialog() {
               <p className="description">W prawym górnym rogu ekranu kliknij na swój profil i wybierz zakładkę „my profile".</p>
             </div>
             <div className="box">
-              <a className="title">5. Na stronie wieszczemumowisietuszyfrem.pl</a>
+              <a className="title">5. Na stronie wieszczemumowi<br/>sietuszyfrem.pl</a>
               <img></img>
               <p className="description">Skopiuj adres portfela i wklej go w odpowieniej rybruce, razem z adresem e-mail na który zakupiony został pre-order.</p>
             </div>
@@ -163,6 +163,9 @@ export default function InfoDialog() {
           text-align: justify;
         }
         @media only screen and (max-width: 499px) {
+          .main {
+            height: 200vh;
+          }
           .info {
             width: 80%;
             display: flex;
@@ -171,7 +174,7 @@ export default function InfoDialog() {
             justify-content: center;
             align-items: flex-start;
             margin-bottom: 15px;
-            margin-top: 5px;
+            margin-top: 1vh;
           }
           .box {
             margin: 10px;
