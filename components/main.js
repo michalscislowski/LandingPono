@@ -26,9 +26,9 @@ export default function Main() {
                 </div>
 
                 <div className="grafika-embeded">
-                  <img className="grafika-pondemia"
-                      src="./SynAlkaPonoGrafika.png">
-                  </img>
+                  <div className="pondemia-image">
+                    <div className="picture" onClick={() => window.open('https://www.esape.pl/produkt/synalkapono-pondemia/')}></div>
+                  </div>
                   <div className="info">
                     <InfoDialog />
                   </div>   
@@ -83,7 +83,7 @@ export default function Main() {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 5px;
+      margin-bottom: 5px;  
     }
     .info {
       margin-top: 15px;
@@ -104,9 +104,22 @@ export default function Main() {
     .logo > img {
       width: 100%;
     }
-    .grafika-pondemia {
+    .pondemia-image {
       width: 640px;
       height: 425px;
+      overflow: hidden;
+    }
+    .picture {
+      width: 100%;
+      height: 100%;
+      transition: 0.5s ease-out;
+      background: url('./SynAlkaPonoGrafika.png') no-repeat;
+      background-size: cover;
+    }
+    .picture:hover {
+      background-image: url('./SynAlkaPonoGrafika.png') no-repeat;
+      transform:scale(1.1);
+      cursor: pointer;
     }
     .psmall, .psmall-banach {
       text-align: center;
@@ -171,7 +184,7 @@ export default function Main() {
       }
     }
     @media only screen and (max-width: 699px) {
-      .grafika-pondemia {
+      .pondemia-image {
         width: 90vw;
         height: 60vw;
       }
