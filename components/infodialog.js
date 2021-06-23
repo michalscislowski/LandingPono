@@ -110,7 +110,7 @@ export default function InfoDialog() {
           <div className="box">
             <a className="title">4. Odebranie tokena</a>
             <img></img>
-            <p className="description">Na <a className="mb-button-clickable" onClick={handleClose}>wieszczemumowisietuszyfrem.pl</a> wklejamy w odpowienie rubryki skopiowany adres portfela razem z&nbsp;adresem email, na który zakupiony został pre-order i klikamy <strong>ZDOBĄDŹ TOKEN!</strong></p>
+            <p className="description">Na <a className="mb-button-clickable" onClick={handleClose}>wieszczemumowisietuszyfrem.pl</a> wklejamy w odpowienie rubryki skopiowany adres portfela razem z&nbsp;adresem email, na który zakupiony został pre-order i klikamy <strong>ODBIERZ TOKEN!</strong></p>
           </div>
           <div>
             <Button 
