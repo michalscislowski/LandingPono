@@ -33,12 +33,17 @@ const useStyles = makeStyles({
   },
   buttonStyle: {
     fontWeight: '900',
-    borderColor: '#ef672dff',
+    borderColor: '#ef672d',
     marginTop: 15,
     marginBottom: 10,
     ['@media (max-width:499px)']: {
       marginTop: 20,
     },
+    color: '#ef672d',
+    '&:hover' : {
+      color: '#222',
+      background: '#ef672d', 
+    }
   },
   buttonAccept: {
     fontWeight: '600',
@@ -142,7 +147,7 @@ export default function Emailinput() {
       };
       axios.post(url_create, newUser)
       .then(function (response) {
-        console.log(response);
+        //console.log(response);
       })
       .catch(function (error) {
         console.log(error);
@@ -221,7 +226,7 @@ export default function Emailinput() {
         helperText={walletError ? "niepoprawny adres portfela" : null}
         error={walletError}
       />
-        <Button onClick={handleTokenButton} className={classes.buttonStyle} variant="outlined" style={{color: '#ef672d'}}>ZDOBĄDŹ TOKEN</Button>
+        <Button onClick={handleTokenButton} className={classes.buttonStyle} variant="outlined">ODBIERZ TOKEN</Button>
       <style jsx>{`
         .form-input {
           display: flex;

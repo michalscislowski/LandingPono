@@ -33,9 +33,17 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   button: {
+    fontSize: '1.1rem',
     fontWeight: '900',
     borderColor: '#ef672d',
-    color: '#ef672d',
+    color: '#111',
+    background: '#ef561c',
+    transition: '0.25s',
+    '&:hover' : {
+      background: '#ef672d', 
+      color: '#222',
+      transform: 'scale(1.05)',
+    }
   }
 }));
 
@@ -69,7 +77,7 @@ export default function InfoDialog() {
   return (
     <div>
       <Button variant="outlined"  className={classes.button} onClick={handleClickOpen} >
-        JAK ZDOBYĆ TOKEN?
+        JAK ODEBRAĆ TOKEN?
       </Button>
       <Dialog fullScreen open={open} onClose={handleClose}  TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
@@ -78,7 +86,7 @@ export default function InfoDialog() {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title} style={{fontWeight: '900'}}>
-            JAK UZYSKAĆ TOKEN?
+            JAK ODEBRAĆ TOKEN?
             </Typography>
           </Toolbar>
         </AppBar>
