@@ -25,10 +25,10 @@ export default function Main() {
                     </div>
                 </div>
 
-                <div className="youtube-embeded">
-                  <iframe className="youtube-pondemia"
-                      src="https://www.youtube.com/embed/OBqCR41cDL0?autoplay=1&loop=1">
-                  </iframe>
+                <div className="grafika-embeded">
+                  <img className="grafika-pondemia"
+                      src="./SynAlkaPonoGrafika.png">
+                  </img>
                   <div className="info">
                     <InfoDialog />
                   </div>   
@@ -79,7 +79,7 @@ export default function Main() {
       justify-content: space-evenly;
       align-items: center;
     }
-    .youtube-embeded {
+    .grafika-embeded {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -101,12 +101,12 @@ export default function Main() {
       margin-top: 20px;
       margin-bottom: 20px;
     }
-    img {
+    .logo > img {
       width: 100%;
     }
-    .youtube-pondemia {
+    .grafika-pondemia {
       width: 640px;
-      height: 320px;
+      height: 425px;
     }
     .psmall, .psmall-banach {
       text-align: center;
@@ -171,9 +171,9 @@ export default function Main() {
       }
     }
     @media only screen and (max-width: 699px) {
-      .youtube-pondemia {
+      .grafika-pondemia {
         width: 90vw;
-        height: 45vw;
+        height: 60vw;
       }
       legend {
         font-size: 1.25rem;
