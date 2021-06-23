@@ -10,7 +10,7 @@ import 'react-notifications-component/dist/theme.css'
 import 'animate.css/animate.min.css';
 import axios from 'axios'
 import { store } from 'react-notifications-component';
-const url_create = process.env.NEXT_PUBLIC_HOST_URL + "/api/addReceiver";
+const url_create = process.env.NEXT_PUBLIC_HOST_URL + "api/addReceiver";
 
 const useStyles = makeStyles({
   inputStyle: {
@@ -95,7 +95,6 @@ export default function Emailinput() {
     emptyInputError ? addWarningNotofication() : null;
     if (!emailError && !walletError && valuesEmail.name.length !== 0 && valuesWallet.name.length !== 0) {
       setOpen(true);
-      console.log(emptyInputError);
     }
   }
 
@@ -132,7 +131,7 @@ export default function Emailinput() {
   }
 
   const handleDataBaseAddition = () => {
-    console.log("dodawanie do bazy");
+    console.log("Dodawanie odbiorcy:");
     if (!emailError && !walletError && valuesEmail.name.length !== 0 && valuesWallet.name.length !== 0) {
       console.log("email:", valuesEmail.name);
       console.log("wallet:", valuesWallet.name);
@@ -141,7 +140,6 @@ export default function Emailinput() {
         wallet_addres: valuesWallet.name,
         status: "Added"
       };
-      console.log(url_create, newUser);
       axios.post(url_create, newUser)
       .then(function (response) {
         console.log(response);
