@@ -6,7 +6,6 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-
 import 'react-notifications-component/dist/theme.css'
 import 'animate.css/animate.min.css';
 import axios from 'axios'
@@ -103,7 +102,7 @@ export default function Emailinput() {
   function addSuccessNotification() {
     store.addNotification({
       title: "Sukces!",
-      message: "Twoje zgoszenie zostało przyjęte!",
+      message: "Twoje zgłoszenie zostało przyjęte!",
       type: "success",
       insert: "top",
       container: "top-right",
@@ -177,7 +176,6 @@ export default function Emailinput() {
           aria-describedby="alert-dialog-slide-description"
           style={{backgroundColor: 'transparent'}}
         >
-          {/* <DialogTitle className={classes.dialogTitle} id="alert-dialog-slide-title"><span>Potwierdzenie</span></DialogTitle> */}
           <DialogContent style={{background: '#111'}}>
             <DialogContentText className={classes.potwierdzenie} component={'span'} id="alert-dialog-slide-description">
               Czy poniższe dane się zgadzają?
@@ -225,7 +223,6 @@ export default function Emailinput() {
         helperText={walletError ? "niepoprawny adres portfela" : null}
         error={walletError}
       />
-      {/* <p>{emptyInputError ? "Oba pola muszą być wypełnione" : null}</p> */}
         <Button onClick={handleTokenButton} className={classes.buttonStyle} variant="outlined" style={{color: '#ef672d'}}>ZDOBĄDŹ TOKEN</Button>
       <style jsx>{`
         .form-input {
@@ -237,33 +234,8 @@ export default function Emailinput() {
           color: #bf5224;
           font-weight: 350;
         }
-        p {
-          margin-top: -5px;
-          color: #eee;
-        }
-        .notification-custom-icon {
-          flex-basis: 20%;
-          position: relative;
-          display: inline-block;
-          padding: 8px 8px 8px 12px; }
-        
-          .fa {
-            top: 50%;
-            left: 50%;
-            color: #fff;
-            font-size: 28px;
-            position: relative;
-            transform: translate(-50%, -50%);
-          }
-  
-        
-        .notification-custom-success {
-          width: 100%;
-          display: flex;
-          background-color: #28a745;}
-        
-        .notification-custom-icon {
-          border-left: 8px solid darken(#28a745, 15%);
+        li {
+          margin-left: -10px;
         }
       `}</style>
     </div>
