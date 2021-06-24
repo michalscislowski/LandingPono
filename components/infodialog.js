@@ -105,12 +105,12 @@ export default function InfoDialog() {
           <div className="box">
             <a className="title">3. Zdobycie adresu portfela tokenpow</a>
             <img></img>
-            <p className="description">W prawym, górnym rogu ekranu klikamy na swój profil i wybieramy zakładkę <strong>my profile</strong>. Kopiujemy adres portfela z pola <strong>Run Owner Address</strong>.</p>
+            <p className="description">W prawym, górnym rogu ekranu klikamy na ikonę profilu i wybieramy zakładkę <strong>my profile</strong>. Kopiujemy adres portfela z pola <strong>Run Owner Address</strong>.</p>
           </div>
           <div className="box">
             <a className="title">4. Odebranie tokena</a>
             <img></img>
-            <p className="description">Na <a className="mb-button-clickable" onClick={handleClose}>wieszczemumowisietuszyfrem.pl</a> wklejamy w odpowienie rubryki skopiowany adres portfela razem z&nbsp;adresem email, na który zakupiony został pre-order i klikamy <strong>ODBIERZ TOKEN!</strong></p>
+            <p className="description">Na <a className="mb-button-clickable" onClick={handleClose}>wieszczemumowisietuszyfrem.pl</a> wklejamy w odpowienie rubryki skopiowany adres portfela razem z&nbsp;adresem email, na który zakupiony został pre-order (jest to niezbędne do procesu weryfikacji) i klikamy <strong>ODBIERZ TOKEN!</strong></p>
           </div>
           <div>
             <Button 

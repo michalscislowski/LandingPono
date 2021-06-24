@@ -106,14 +106,14 @@ export default function Emailinput() {
   function addSuccessNotification() {
     store.addNotification({
       title: "Sukces!",
-      message: "Twoje zgłoszenie zostało przyjęte!",
+      message: "Twoje zgłoszenie zostało przyjęte! Token zostanie dostarczony w ciągu 30 minut.",
       type: "success",
       insert: "top",
       container: "top-right",
       animationIn: ["animate__animated", "animate__fadeIn"],
       animationOut: ["animate__animated", "animate__fadeOut"],
       dismiss: {
-        duration: 4000,
+        duration: 10000,
         showIcon: true,
       }
     });
@@ -181,7 +181,7 @@ export default function Emailinput() {
         >
           <DialogContent style={{background: '#111'}}>
             <DialogContentText className={classes.potwierdzenie} component={'span'} id="alert-dialog-slide-description">
-              Czy poniższe dane się zgadzają?
+              Czy podane dane się zgadzają? Upewnij się proszę, że podany email jest taki sam jak przy zakupie preordera.
               <ul>
                 <li><span>email: </span> {valuesEmail.name}</li>
                 <li><span>adres portfela: </span> {valuesWallet.name}</li>
