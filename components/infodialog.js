@@ -91,6 +91,11 @@ export default function InfoDialog() {
           </Toolbar>
         </AppBar>
         <div className="main">
+          <div className="youtube-embeded">
+            <iframe className="youtube-pondemia"
+                src="https://www.youtube.com/embed/vz4IBK8ITrQ?autoplay=1&loop=1">
+            </iframe>
+          </div>
           <div className="box">
             <a className="title">1. Założenie konta moneybutton</a>
             <img></img>
@@ -142,6 +147,14 @@ export default function InfoDialog() {
           padding-top: 15px;
           border-bottom: 1px solid #0b7a75;
         }
+        .youtube-embeded {
+          margin-top: 10px;  
+        }
+        .youtube-pondemia {
+          width: 640px;
+          height: 360px;
+          overflow: hidden;
+        }
         .title {
           font-size: 1.5rem;
           font-weight: 700;
@@ -165,6 +178,10 @@ export default function InfoDialog() {
             min-width: 300px;
             width: 90%;
             margin-top: 15px;
+          }
+          .youtube-pondemia {
+            width: 90vw;
+            height: 50.5vw;
           }
           .description {
             padding-bottom: 15px;
