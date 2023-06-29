@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -9,6 +9,9 @@ import MobileSocials from './mobileSocials';
 import InfoDialog from './infodialog';
 
 export default function Main() {
+  const date = new Date()
+  const currentYear = date.getFullYear()
+
     return (
       <div className="main">
               <div className="logo">
@@ -35,7 +38,7 @@ export default function Main() {
                 </div>
 
                 <div className="banach">
-                  <img className="banach-logo" src="./banach-logo.png"></img>
+                  <img className="banach-logo" src="./banach-logo.png" onClick={()=> window.open('https://landingbanach.vercel.app/')}></img>
                   <div className="socials">
                       <a className="facebook"><FacebookIcon aria-label="Facebook.com" onClick={() => window.open('https://www.facebook.com/BanachGroup')} /></a>
                       <a className="instagram"><InstagramIcon aria-label="Instagram.com" onClick={() => window.open('https://www.instagram.com/BanachGroup/')}/></a>
@@ -48,7 +51,7 @@ export default function Main() {
               <div className="mobile-socials">
                 <MobileSocials />
               </div>
-              <div className="small">&copy; 2021 BanachGroup</div>
+              <div className="small">&copy; {currentYear} BanachGroup</div>
         <style jsx>{`
     .main {
       display: flex;
@@ -155,14 +158,14 @@ export default function Main() {
     }
     .socials a, .psocials a {
       margin-left: 15px;
-      transition: 0.3s;
+      transition: 0.15s;
     }
     a:hover {
       cursor: pointer;
       transform: scale(1.15);
       color: #fd7f3c;
       margin-left: 15px;
-      transition: 0.3s;
+      transition: 0.15s;
     }
     .twetch {
       margin-top: 2px;
